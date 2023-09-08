@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.password);
         String password = input.getText().toString();
 
-        if (!email.contains("@")) {
-            message = "The Email Address Is Not Valid";
+        if (!email.contains("@") && !email.isEmpty()) {
+            message = "The Email Address Is Not Valid Try Again";
             ((TextView) findViewById(R.id.output)).setText(message);
             return;
         }
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 //            return;
 //        }
 
-        if (email.equals("admin@gamil.com") && password.equals("admin")) {
+        else if (email.equals("admin@gmail.com") && password.equals("admin")) {
             message = "You've Sign In!!!🥳";
-            ((TextView) findViewById(R.id.output)).setText(message);
+//            ((TextView) findViewById(R.id.output)).setText(message);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
             Intent i = new Intent(this, GoogleMap.class);
